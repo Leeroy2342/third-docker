@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+
+ webserver:
+  build:
+   context: ./php
+   dockerfile: dockerfile
+  ports:
+   - $EXTERNAL_WEB_PORT:80
+  depends_on:
+   - db
+  links:
+   - db
+  environment:
+   MYSQL_NAME: $MYSQL_NAME
+   MYSQL_USER: $MYSQL_USER
+   MYSQL_PASSWORD: $MYSQL_PASSWORD
+   MYSQL_DATABASE: $MYSQL_DATABASE
+   EXTERNAL_SQL_PORT: $EXTERNAL_SQL_PORT
+
+ db: #same as MYSQL_NAME
+  image: mariadb
+  restart: always
+  ports:
+   - $EXTERNAL_SQL_PORT:3306
+  environment:
+   MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+   MYSQL_USER: $MYSQL_USER
+   MYSQL_PASSWORD: $MYSQL_PASSWORD
+   MYSQL_DATABASE: $MYSQL_DATABASE
+   EXTERNAL_SQL_PORT: $EXTERNAL_SQL_PORT
+  volumes:
+   - "./scripts/table1.sql:/docker-entrypoint-initdb.d/1.sql"
+
+ phpmyadmin:
+  image: phpmyadmin
+  links:
+   - db
+  depends_on:
+   - db
+  ports:
+   - $EXTERNAL_PMA_PORT:80
+  environment:
+   PMA_PORT: $EXTERNAL_SQL_PORT
+   PMA_ARBITRARY: 1

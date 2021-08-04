@@ -1,0 +1,49 @@
+html {
+	height: 90%;
+}
+body {
+height: 100%;
+background: linear-gradient(to top, #687EAE 10%, #E4E4D8 50%, #687EAE 90%);
+background-attachment: fixed;
+}
+text { 
+	font-style: normal; 
+	font-weight: bolder; 
+	font-size: 20px; 
+	font-family: Arial Black 
+}
+
+input1 {
+	text-align: center;
+    display: block;
+    border: none;
+    color: #333;
+    background: transparent;
+    border-bottom: 1px dotted black;
+    padding: 5px 2px 0 2px;
+}
+ 
+#input1:focus {
+    outline: none;
+    border-color: #51CBEE;
+}
+
+       ============================
+ 
+ body {
+	background: url(../img/background.png) no-repeat;
+	background-size: 100% 100%;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+}
+
+    content {
+    width: 500px; /* Ширина слоя */
+    margin: auto; /* Выравнивание по центру */
+      }
+
+center {
+    width:1000px; /* Ширина элемента в пикселах */
+    padding: 0px; /* Поля вокруг текста */
+    margin: auto; /* Выравниваем по центру */
+    background:; /* Цвет фона */

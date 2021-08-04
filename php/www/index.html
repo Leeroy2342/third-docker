@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+	</head>
+<body>
+	<text>
+		<form method="post" action="check.php">
+<p align="center" style="margin-top: 10px; margin-bottom: 10px"> 
+Simple query </p>
+
+<p align="center" style="margin-top: 10px; margin-bottom: 10px">
+Please, enter row number: <input type="text" name="Row" autocomplete="off"
+size="1"
+maxlength="1"
+required pattern="[1-4]{1}"
+title="Correct numbers 1-4"</p>
+
+<p align="center" style="margin-top: 10px; margin-bottom: 10px">
+<select size="5" multiple name="Column" required="required">
+    <option disabled>Please choose column</option>
+    <option value="column1">1</option>
+    <option value="column2">2</option>
+    <option value="column3">3</option>
+    <option value="column4">4</option>
+   </select></p>
+</p>
+
+<p align="center" style="margin-top: 0px; margin-bottom: 0px"><br/> 
+<input id="submit" type="submit" value="Submit"><br/></p> 
+		</form>
+
+	</text>
+
+</body>
+</html>
